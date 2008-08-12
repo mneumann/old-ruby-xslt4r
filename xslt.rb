@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2001 by Michael Neumann (neumann@s-direktnet.de)
 #
-# $Id: xslt.rb,v 1.17 2001/08/02 09:52:39 michael Exp $
+# $Id: xslt.rb,v 1.18 2001/11/15 22:49:21 michael Exp $
 #
 
 #
@@ -451,7 +451,7 @@ class Stylesheet
     }
   end
 
-  def initialize( stringOrReadable, arguments = [] )
+  def initialize( stringOrReadable, arguments = {} )
     @pos = 0
     @templates = []
     @ext_functions = {XSLT_EXT_NS => [XsltExtFunctions.new, true] }
@@ -470,8 +470,7 @@ class Stylesheet
     #
     # program arguments => XsltExtFuntions#get_arg( key )
     #
-    @args = Hash.new( '' )
-    arguments.each { | str | k, v = str.split("="); @args[k] = v } 
+    @args = arguments
   end
 
   # Extension Classes  ---------------------------------------------
@@ -644,7 +643,7 @@ class Stylesheet
 
   def glob_vars
     new = {}
-    @glob_vars.each {| k, v | new[k] = v.dup }
+    @glob_vars.each {| k, v | new[k] = if v.nil? then nil else v.dup end }
     new
   end
 
@@ -683,8 +682,10 @@ if $0 == __FILE__
   stylesheet   = File.readlines( ARGV[0] ).to_s
   xml_document = File.readlines( ARGV[1] ).to_s
 
- 
-  stylesheet = XSLT::Stylesheet.new( stylesheet, ARGV[2..-1] || [] )
+  args = {}
+  (ARGV[2..-1] || []).each { |str| k, v = str.split("="); args[k] = v } 
+
+  stylesheet = XSLT::Stylesheet.new( stylesheet, args )
   stylesheet.apply( xml_document )
 end
 
