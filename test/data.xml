@@ -1,0 +1,17 @@
+<config>
+
+  <adress>
+    <name type="first">Michael</name>
+    <name type="last">Neumann</name>
+    <age>21</age>
+  </adress>
+
+  <adress>
+    <name type="first">Werner</name>
+    <name type="last">Maier</name>
+    <age>22</age>
+  </adress>
+
+
+</config>
+

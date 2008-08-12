@@ -1,0 +1,20 @@
+<lang>
+
+  <example>
+    <description xml:lang="de">
+      Dies ist ein deutscher Text
+    </description>
+    <description xml:lang="en">
+      This is an english text
+    </description>
+  </example>
+
+  <example>
+    <description>
+      Dies ist ein deutscher Text
+    </description>
+  </example>
+
+
+</lang>
+

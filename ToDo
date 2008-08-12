@@ -1,0 +1,25 @@
+=begin
+= ToDo
+* <xsl:copy-of>
+* <xsl:output HTML>: <img></img> => <img/> ...
+* xsl:param 
+* xsl:text
+* XPath functions: ruby:func(a, b)  => a.func(b) in Ruby
+* <xsl:variable>xxxx</xsl:variable>, same with xsl:param
+* build a output tree 
+
+= Done
+* xsl:include
+* xsl:sort
+* xsl:call-template
+* xsl:choose
+* parse_node etc.. not with @content -> as parameter
+* extensions: <ruby:eval>...</ruby:eval>
+              <ruby:comp ns="..." source="external" object="MyComp.new"/>
+* scope of variables
+* parse attributes of tags for {... } and eval this as XPath expression.
+  How to disable this for specific elements?
+* <xsl:for-each>
+
+=end
+
