@@ -1,7 +1,7 @@
 #
 # XSLT processor
 #
-# Copyright (c) 2001 by Michael Neumann (neumann@s-direktnet.de)
+# Copyright (c) 2001 by Michael Neumann (mneumann@ntecs.de)
 #
 # $Id: xslt.rb,v 1.18 2001/11/15 22:49:21 michael Exp $
 #
